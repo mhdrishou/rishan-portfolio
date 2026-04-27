@@ -1,16 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
-
-const ThreeDScene = dynamic(() => import('./ThreeDScene'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="w-48 h-48 rounded-full bg-gray-100 animate-pulse" />
-    </div>
-  ),
-});
+// 3D object removed for performance; placeholder decorative gradient orb will be used instead
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -102,12 +93,13 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative h-[400px] lg:h-[600px] hidden lg:block"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative h-0 lg:h-0 hidden lg:block"
           >
-            <ThreeDScene />
+            {/* Decorative 2D orb placeholder (glass gradient) */}
+            <div className="orb absolute right-8 top-1/2 -translate-y-1/2 w-60 h-60 rounded-full glass" aria-label="decorative orb" />
           </motion.div>
         </div>
       </div>

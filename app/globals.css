@@ -33,6 +33,25 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/* Interactive dotted gradient backdrop */
+.backdrop-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  /* Layered gradients with a dotted overlay */
+  background-image:
+    radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(0,0,0,.08), transparent 40%),
+    radial-gradient(circle at calc(var(--mx, 50%) + 15%) calc(var(--my, 50%) + 15%), rgba(0,0,0,.05), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(0,0,0,.02), transparent 40%),
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,.04) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 12px 12px;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay, overlay, overlay, normal;
+  filter: saturate(110%);
+  opacity: 0.9;
+}
+
 .glass-card {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(20px);
