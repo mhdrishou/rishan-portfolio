@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "rishan-portfolio",
+  "builds": [
+    { "src": "package.json", "use": "@vercel/next" }
+  ],
+  "routes": []
+}
