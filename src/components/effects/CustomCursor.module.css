@@ -1,0 +1,62 @@
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursorOuter {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(74, 144, 217, 0.9);
+  border-radius: 50%;
+  background: rgba(74, 144, 217, 0.08);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.cursorInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: #4A90D9;
+  border-radius: 50%;
+}
+
+.cursor.hovering .cursorOuter {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(124, 58, 237, 0.8);
+  background: rgba(124, 58, 237, 0.12);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+.cursor.hovering .cursorInner {
+  background: #7C3AED;
+}
+
+.trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle,
+    rgba(74, 144, 217, 0.35) 0%,
+    rgba(124, 58, 237, 0.15) 40%,
+    transparent 70%
+  );
+  filter: blur(24px);
+  transform: translate(-50%, -50%);
+}
+
+@media (hover: none) {
+  .cursor,
+  .trail {
+    display: none;
+  }
+}

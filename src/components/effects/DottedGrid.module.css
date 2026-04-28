@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dot {
+  width: 2px;
+  height: 2px;
+  background: rgba(74, 144, 217, 0.25);
+  border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+}
